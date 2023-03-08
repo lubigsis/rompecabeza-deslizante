@@ -47,11 +47,20 @@ span{
 
 
 .board {
-    width: 380px;
+    width: 384px;
     height: 380px;
     background-color: #feadd4;
     border: 10px solid #FF057C;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+}
+
+.board img{
+    border: 1px solid #FF057C;
+    cursor: pointer;
+}
+
+.board img:hover{
+    border: 1px solid yellow;
 }
