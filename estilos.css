@@ -36,17 +36,19 @@ span{
     padding: 20px;
 }
 
-.contenedor-total .contenedor-img{
+.contenedor-total .contenedor-img{ /*img entera de referencia*/
    /* border: 2px solid blue;*/
 }
 
- .contenedor-total .contenedor-img img{
+ .contenedor-total .contenedor-img .img-entera{ /*img entera de referencia*/
     height: 200px;
+   /* border: 2px solid yellow;*/
 }
 
+
 .board {
-    width: 360px;
-    height: 360px;
+    width: 380px;
+    height: 380px;
     background-color: #feadd4;
     border: 10px solid #FF057C;
     margin: 0 auto;
