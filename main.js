@@ -41,9 +41,35 @@ function dragDrop() {
 function dragEnd() {
     if (!otraFicha.src.includes("1.jpg")) {
         return;
-    }                                      
+    }  
+ let actualCoords = fichaActual.id.split("-"); //p.e. "0-0" -> ["0", "0"]
+    let r = parseInt(actualCoords[0]);
+    let c = parseInt(actualCoords[1]);
+
+    let otraCoords = otraFicha.id.split("-");
+    let r2 = parseInt(otraCoords[0]);
+    let c2 = parseInt(otraCoords[1]);
+
+    let moverIzq = r == r2 && c2 == c-1;
+    let moverDerecha = r == r2 && c2 == c+1;
+
+    let moverArriba = c == c2 && r2 == r-1;
+    let moverAbajo = c == c2 && r2 == r+1;
+
+    let esAdjacente = moverIzq || moverDerecha || moverArriba || moverAbajo;
+
+    if (esAdjacente) {
+        let actualImg = fichaActual.src;
+        let otraImg = otraFicha.src;
+
+        fichaActual.src = otraImg;
+        otraFicha.src = actualImg;
+
+        turnos += 1;
+        document.getElementById("turnos").innerText = turnos;                                   
     
     }
+}
 
 //-----------------------------------------------------------------------------------
 
